@@ -23,14 +23,23 @@ cd into the directory containing the maglooptuner.sh script and then start the s
 
 # How to use this script to tune a Mag Loop
 Turn on your radio and turn the radio's volume up so you can hear it
+
 Make sure your computer's volume is up so you can hear the text to speech
+
 No other hamlib enabled applications should be running so this script can control the radio
+
 Tune your Mag Loop for Maximum noise, This will get you to the general area
+
 Start the script and hear the current S Meter value read aloud to you
+
 The script will connect to your radio, grab the current s meter value and read it aloud once a second
+
 Tune the loop slowly, wait a second, hear the value and tune up or down depending on what value you hear
+
 You want to tune to MAXIMUM S Meter reading
+
 When you get a maximum value, your loop should be tuned correctly. 
+
 Hit the Tune button on your radio to do any final matching if needed
 
 This allows you to tune your mag loop slowly from a different room or across the room.
