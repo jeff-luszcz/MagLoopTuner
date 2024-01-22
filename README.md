@@ -2,6 +2,12 @@
 A short script to read S meter values aloud for tuning a Mag Loop remotely
 By default it is set up for a Yaesu FT-450D connected to ttyUSB0 at 38400 baud
 
+# License CC0
+
+#Auhor
+Jeff Luszcz
+https://github.com/jeff-luszcz/MagLoopTuner
+
 #Requires
 
 hamlib https://hamlib.github.io
