@@ -2,16 +2,22 @@
 A short script to read S meter values aloud for tuning a Mag Loop remotely
 By default it is set up for a Yaesu FT-450D connected to ttyUSB0 at 38400 baud
 
-# License CC0
+# License
+CC0 https://creativecommons.org/public-domain/cc0/
 
-#Auhor
+# Author
+
 Jeff Luszcz
+
 https://github.com/jeff-luszcz/MagLoopTuner
 
-#Requires
+
+# Requires
 
 hamlib https://hamlib.github.io
+
 espeak https://espeak.sourceforge.net
+
 
 Install hamlib either through downloading the source and compiling / installing or use the apt-get or yum command to install
 espeak is usually best installed using apt-get or yum  
