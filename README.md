@@ -20,6 +20,7 @@ espeak https://espeak.sourceforge.net
 
 
 Install hamlib either through downloading the source and compiling / installing or use the apt-get or yum command to install
+
 espeak is usually best installed using apt-get or yum  
 
 e.g.
@@ -29,6 +30,7 @@ Make the script executable:
 chmod +x maglooptuner.sh
 
 To run:
+
 cd into the directory containing the maglooptuner.sh script and then start the script using this command;
 
 ./maglooptuner.sh
