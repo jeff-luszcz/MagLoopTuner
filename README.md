@@ -1,6 +1,6 @@
 # MagLoopTuner
-A short script to read S meter values aloud for tuning a Mag Loop remotely
-By default it is set up for a Yaesu FT-450D connected to ttyUSB0 at 38400 baud
+A short script to read S Meter values aloud for tuning a Mag Loop remotely
+By default it is set up for a Yaesu FT-450D connected to /dev/ttyUSB0 at 38400 baud
 
 # License
 CC0 https://creativecommons.org/public-domain/cc0/
@@ -35,22 +35,25 @@ cd into the directory containing the maglooptuner.sh script and then start the s
 
 ./maglooptuner.sh
 
+
+You can also put the script in a directory someowhere in your PATH
+
 # How to use this script to tune a Mag Loop
 Turn on your radio and turn the radio's volume up so you can hear it
 
 Set your radio to your desired frequency
 
-Make sure your computer's volume is up so you can hear the text to speech
+Make sure your computer's volume is loud enough so you can hear the text to speech voice
 
-No other hamlib enabled applications should be running so this script can control the radio
+No other hamlib enabled applications (or others reading the same serial port) should be running so this script can control the radio
 
-Start the script and hear the current S Meter value read aloud to you
+Start the script to hear the current S Meter value read aloud to you
 
-The script will connect to your radio, grab the current s meter value and read it aloud once a second
+The script will connect to your radio, grab the current S Meter value and read it aloud once a second
 
-Tune your Mag Loop for Maximum noise, This will get you to the general area
+Tune your Mag Loop for Maximum noise, This will get you to the general area of best tuning
 
-The S Meter reading should get larger
+The S Meter vlue you hear should get larger
 
 Tune the loop slowly, wait a second, hear the value and tune up or down depending on what value you hear
 
@@ -62,7 +65,11 @@ Hit the Tune button on your radio to do any final matching if needed
 
 This allows you to tune your mag loop slowly from a different room or across the room.
 
+If needed, using Facetime or a phone call between two phones can allow you to tune even if you can't be in the same room as the computer.
+
 To stop, hit Control-C in the shell window to stop the script
+
+If errors occur you may hear the script read the error message or giberish. If this happens make sure no other applications are using the same serial port, or that the hamlib connection values are correct
 
 
 
