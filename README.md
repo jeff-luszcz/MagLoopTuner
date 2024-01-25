@@ -71,6 +71,15 @@ To stop, hit Control-C in the shell window to stop the script
 
 If errors occur you may hear the script read the error message or giberish. If this happens make sure no other applications are using the same serial port, or that the hamlib connection values are correct
 
+# Using the optional maglooptunerset.sh to set frquency on radio and then read aloud S Meter
+You can edit the script to set a desired frequency, to prevent haivng to launch js8call or similar app to change to a new frequency.
+
+To use, edit the maglooptunerset.sh file, and change the frequency (the 40m js8call frequency by defaulr) to your desired frequency.
+
+The frequency is set in Hz, so 7078Mhz would 7078000
+
+You can create multiple named files to make it easy to set different frequencies.
+
 
 
 
