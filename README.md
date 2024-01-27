@@ -1,6 +1,7 @@
 # MagLoopTuner
 A short script to read S Meter values aloud for tuning a Mag Loop remotely
 By default it is set up for a Yaesu FT-450D connected to /dev/ttyUSB0 at 38400 baud
+A second version of this script maglooptunerset.sh allows you to set the frequency on the radio and then start speaking S Meter readings
 
 # License
 CC0 https://creativecommons.org/public-domain/cc0/
