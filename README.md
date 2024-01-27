@@ -75,11 +75,13 @@ If errors occur you may hear the script read the error message or giberish. If t
 # Using the optional maglooptunerset.sh to set frquency on radio and then read aloud S Meter
 You can edit the script to set a desired frequency, to prevent haivng to launch js8call or similar app to change to a new frequency.
 
-To use, edit the maglooptunerset.sh file, and change the frequency (the 40m js8call frequency by defaulr) to your desired frequency.
+To use, call the maglooptunerset.sh file, and supply the frequency to your desired frequency on the command line.
+
+./maglooptunerset.sh 7078000
 
 The frequency is set in Hz, so 7078Mhz would 7078000
 
-You can create multiple named files to make it easy to set different frequencies.
+You could create multiple named files with hardcoded values to make it easy to set different frequencies.
 
 
 
