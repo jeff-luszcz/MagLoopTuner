@@ -1,6 +1,8 @@
 # MagLoopTuner
-A short script to read S Meter values aloud for tuning a Mag Loop remotely
+A short script to read S Meter values aloud using Text to Speach for tuning a Mag Loop remotely.
+
 By default it is set up for a Yaesu FT-450D connected to /dev/ttyUSB0 at 38400 baud
+
 A second version of this script maglooptunerset.sh allows you to set the frequency on the radio and then start speaking S Meter readings
 
 # License
@@ -18,7 +20,6 @@ https://github.com/jeff-luszcz/MagLoopTuner
 hamlib https://hamlib.github.io
 
 espeak https://espeak.sourceforge.net
-
 
 Install hamlib either through downloading the source and compiling / installing or use the apt-get or yum command to install
 
@@ -72,7 +73,7 @@ To stop, hit Control-C in the shell window to stop the script
 
 If errors occur you may hear the script read the error message or giberish. If this happens make sure no other applications are using the same serial port, or that the hamlib connection values are correct
 
-# Using the optional maglooptunerset.sh to set frquency on radio and then read aloud S Meter
+# Using the optional maglooptunerset.sh to set frquency on radio and then read aloud the S Meter readings
 You can edit the script to set a desired frequency, to prevent haivng to launch js8call or similar app to change to a new frequency.
 
 To use, call the maglooptunerset.sh file, and supply the frequency to your desired frequency on the command line.
