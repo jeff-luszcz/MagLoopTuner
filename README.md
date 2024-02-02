@@ -55,13 +55,13 @@ The script will connect to your radio, grab the current S Meter value and read i
 
 Tune your Mag Loop for Maximum noise, This will get you to the general area of best tuning
 
-The S Meter vlue you hear should get larger
+The S Meter value you hear should get larger
 
 Tune the loop slowly, wait a second, hear the value and tune up or down depending on what value you hear
 
 You want to tune to MAXIMUM S Meter reading
 
-When you get a maximum value, your loop should be tuned correctly. My Ft-450D reads around "150"
+When you get a maximum value, your loop should be tuned correctly. My Ft-450D's auto tuner can tune between 120 - 150, though higher is best
 
 Hit the Tune button on your radio to do any final matching if needed
 
