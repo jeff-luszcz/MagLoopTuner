@@ -84,6 +84,11 @@ The frequency is set in Hz, so 7078Mhz would 7078000
 
 You could create multiple named files with hardcoded values to make it easy to set different frequencies.
 
+# Troubleshooting
+You might find that the script returns the same S Meter value over and over, This might be a sign that you need to 
+turn the RF GAIN knob one way or another to get the S Meter readings to change with antenna tuning changes.
+
+
 
 
 
