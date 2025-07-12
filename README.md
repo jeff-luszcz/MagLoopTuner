@@ -1,96 +1,106 @@
 # MagLoopTuner
-A short script to read S Meter values aloud using Text to Speach for tuning a Mag Loop remotely.
 
-By default it is set up for a Yaesu FT-450D connected to /dev/ttyUSB0 at 38400 baud
+**MagLoopTuner** is a simple script designed to read S Meter values aloud using text-to-speech for remotely tuning a magnetic loop antenna (“Mag Loop”). This makes it easy to find the best tuning position, even if you're not right next to your radio.
 
-A second version of this script maglooptunerset.sh allows you to set the frequency on the radio and then start speaking S Meter readings
+By default, MagLoopTuner is configured for a **Yaesu FT-450D** connected to `/dev/ttyUSB0` at 38400 baud. A companion script, `maglooptunerset.sh`, adds the ability to set the radio frequency before it begins reading S Meter values aloud.
 
-# License
-CC0 https://creativecommons.org/public-domain/cc0/
+---
 
-# Author
+## Features
 
-Jeff Luszcz
+- Speaks S Meter readings once per second to help you tune your Mag Loop for maximum signal.
+- Remote operation: Allows you to tune your antenna from across the room or even another room.
+- Optional script to set the radio frequency via command line before reading S Meter values.
 
-https://github.com/jeff-luszcz/MagLoopTuner
+---
 
+## Requirements
 
-# Requires
+- [hamlib](https://hamlib.github.io)  
+  Used for communication with your radio.  
+  Install via package manager or source:
+  ```sh
+  sudo apt-get install hamlib
+  # or
+  sudo yum install hamlib
+  ```
 
-hamlib https://hamlib.github.io
+- [espeak](https://espeak.sourceforge.net)  
+  For text-to-speech output.
+  ```sh
+  sudo apt-get install espeak
+  # or
+  sudo yum install espeak
+  ```
 
-espeak https://espeak.sourceforge.net
+---
 
-Install hamlib either through downloading the source and compiling / installing or use the apt-get or yum command to install
+## Installation & Usage
 
-espeak is usually best installed using apt-get or yum  
+1. **Clone or Download this repository**
 
-e.g.
-sudo yum install espeak
+2. **Make the scripts executable:**
+   ```sh
+   chmod +x maglooptuner.sh
+   chmod +x maglooptunerset.sh
+   ```
 
-Make the script executable:
-chmod +x maglooptuner.sh
+3. **Run the main script:**
+   ```sh
+   ./maglooptuner.sh
+   ```
+   Or add the script to a directory in your `$PATH` for easier access.
 
-To run:
+---
 
-cd into the directory containing the maglooptuner.sh script and then start the script using this command;
+## Tuning a Mag Loop with This Script
 
-./maglooptuner.sh
+1. **Power on your radio** and set the volume so you can clearly hear it.
+2. **Set your desired frequency** on the radio (or use `maglooptunerset.sh` to do this from your computer).
+3. **Ensure your computer's audio** is loud enough to hear the spoken S Meter values.
+4. **Close any other hamlib-enabled applications** or anything else using the same serial port.
+5. **Start the script** to begin hearing S Meter values spoken aloud once per second.
+6. **Tune your Mag Loop for maximum S Meter reading:**  
+   - Slowly adjust the loop.
+   - Pause a second after each adjustment.
+   - Listen for the S Meter value to increase.
+   - Aim for the maximum S Meter value you can achieve.
+7. **Once at maximum,** your loop is tuned. (On the FT-450D, max S Meter may be 120–150, but higher is better.)
+8. **Optionally,** use your radio's built-in tuner for final matching.
+9. **Stop the script** at any time with `Ctrl+C` in the terminal.
 
+**Tip:** If you’re not in the same room, you can use a phone or video call to relay audio between locations.
 
-You can also put the script in a directory someowhere in your PATH
+---
 
-# How to use this script to tune a Mag Loop
-Turn on your radio and turn the radio's volume up so you can hear it
+## Using `maglooptunerset.sh` to Set Frequency and Read S Meter
 
-Set your radio to your desired frequency
-
-Make sure your computer's volume is loud enough so you can hear the text to speech voice
-
-No other hamlib enabled applications (or others reading the same serial port) should be running so this script can control the radio
-
-Start the script to hear the current S Meter value read aloud to you
-
-The script will connect to your radio, grab the current S Meter value and read it aloud once a second
-
-Tune your Mag Loop for Maximum noise, This will get you to the general area of best tuning
-
-The S Meter value you hear should get larger
-
-Tune the loop slowly, wait a second, hear the value and tune up or down depending on what value you hear
-
-You want to tune to MAXIMUM S Meter reading
-
-When you get a maximum value, your loop should be tuned correctly. My Ft-450D's auto tuner can tune between 120 - 150, though higher is best
-
-Hit the Tune button on your radio to do any final matching if needed
-
-This allows you to tune your mag loop slowly from a different room or across the room.
-
-If needed, using Facetime or a phone call between two phones can allow you to tune even if you can't be in the same room as the computer.
-
-To stop, hit Control-C in the shell window to stop the script
-
-If errors occur you may hear the script read the error message or giberish. If this happens make sure no other applications are using the same serial port, or that the hamlib connection values are correct
-
-# Using the optional maglooptunerset.sh to set frquency on radio and then read aloud the S Meter readings
-You can edit the script to set a desired frequency, to prevent haivng to launch js8call or similar app to change to a new frequency.
-
-To use, call the maglooptunerset.sh file, and supply the frequency to your desired frequency on the command line.
-
+To set the frequency and then start S Meter readings:
+```sh
 ./maglooptunerset.sh 7078000
+```
+- Frequency must be specified in **Hz** (e.g., `7078000` for 7.078 MHz).
+- You can create multiple copies of the script with preset frequencies for convenience.
 
-The frequency is set in Hz, so 7078Mhz would 7078000
+---
 
-You could create multiple named files with hardcoded values to make it easy to set different frequencies.
+## Troubleshooting
 
-# Troubleshooting
-You might find that the script returns the same S Meter value over and over, This might be a sign that you need to 
-turn the RF GAIN knob one way or another to get the S Meter readings to change with antenna tuning changes.
+- **S Meter reading doesn’t change:** Adjust your radio's RF GAIN knob; sometimes the S Meter will get “stuck” if the gain is too high/low.
+- **Errors or gibberish spoken:** Ensure no other applications are using the serial port. Double-check hamlib connection parameters.
+- **Script won't run:** Make sure it’s executable (`chmod +x maglooptuner.sh`) and dependencies are installed.
 
+---
 
+## License
 
+[CC0](https://creativecommons.org/public-domain/cc0/) – Public Domain
 
+---
 
+## Author
 
+Jeff Luszcz  
+[https://github.com/jeff-luszcz/MagLoopTuner](https://github.com/jeff-luszcz/MagLoopTuner)
 
+---
